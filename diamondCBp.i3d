@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="diamondC" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="9.0.2"/>
+  </Asset>
+
+  <Files>
+    <File fileId="7" filename="$data/shaders/vehicleShader.xml"/>
+    <File fileId="12" filename="$data/shared/default_normal.dds"/>
+    <File fileId="5" filename="shaders/DP_Normal.dds"/>
+    <File fileId="15" filename="shaders/decal.png"/>
+    <File fileId="13" filename="shaders/doveTail Trailer_diffuse.dds"/>
+    <File fileId="14" filename="shaders/doveTail Trailer_normal.dds"/>
+    <File fileId="6" filename="shaders/gen_dirt_1.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="col_mat" materialId="4" diffuseColor="0.364706 0 0.8 1" specularColor="0.6 1 0">
+    </Material>
+    <Material name="decal" materialId="5" specularColor="0.6 1 0">
+      <Texture fileId="15"/>
+    </Material>
+    <Material name="diamondPlate" materialId="6" diffuseColor="0.8 0.756863 0 1" customShaderId="7" customShaderVariation="colorMask">
+      <Normalmap fileId="5"/>
+      <Glossmap fileId="6"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.8 0.55 0.05 0"/>
+      <CustomParameter name="colorMat1" value="1 0.1 0.1 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="lambert1" materialId="7" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="lambert1" materialId="8" diffuseColor="0.592157 0.592157 0.592157 1" customShaderId="7">
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+    </Material>
+    <Material name="midsota_main_paint_" materialId="9" diffuseColor="0.294118 1 0 1" customShaderId="7" customShaderVariation="colorMask">
+      <Normalmap fileId="12"/>
+      <Glossmap fileId="6"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.8 0.55 0.05 0"/>
+      <CustomParameter name="colorMat1" value="0.8 0.8 0.8 3"/>
+      <CustomParameter name="colorMat2" value="0.02 0.02 0.02 0"/>
+      <CustomParameter name="colorMat3" value="0.02 0.02 0.02 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="Wood_Bamboo" materialId="10" customShaderId="7">
+      <Texture fileId="13"/>
+      <Normalmap fileId="14"/>
+      <Glossmap fileId="6"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="diamondCBp.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+      <Shape shapeId="1" name="trailerMainComp" dynamic="true" compound="true" collisionMask="2105410" clipDistance="300" nodeId="41" materialIds="4" nonRenderable="true">
+        <TransformGroup name="wheels" translation="0 0.1575 -1.64325" nodeId="42">
+          <TransformGroup name="wheelBackLeft" translation="1.05 0.3171 -2.36772" nodeId="43"/>
+          <TransformGroup name="wheelFrontLeft" translation="1.05 0.317183 -1.39625" nodeId="44"/>
+          <TransformGroup name="wheelFrontRight" translation="-1.05 0.317419 -1.39632" nodeId="45"/>
+          <TransformGroup name="wheelBackRight" translation="-1.05 0.317183 -2.36774" nodeId="46"/>
+        </TransformGroup>
+        <TransformGroup name="tensionBelts" translation="-0.08715 0.51345 4.42952" nodeId="47">
+          <Shape shapeId="2" name="beltActivationTrigger" translation="3.12639e-16 1.06796 -4.18563" visibility="false" kinematic="true" trigger="true" collisionMask="1048576" nodeId="48" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <TransformGroup name="beltStart2" translation="1.456 0.457 -1.22945" rotation="-0 -90 0" nodeId="49">
+            <TransformGroup name="beltEnd2" translation="3.48091e-05 2.89381e-05 2.769" nodeId="50"/>
+          </TransformGroup>
+          <TransformGroup name="beltStart3" translation="1.456 0.457 -1.91183" rotation="-0 -90 0" nodeId="51">
+            <TransformGroup name="beltEnd3" translation="0 2.89083e-05 2.769" nodeId="52"/>
+          </TransformGroup>
+          <TransformGroup name="beltStart4" translation="1.456 0.46 -2.58322" rotation="-0 -90 0" nodeId="53">
+            <TransformGroup name="beltEnd4" translation="3.49283e-05 0 2.769" nodeId="54"/>
+          </TransformGroup>
+          <TransformGroup name="beltStart5" translation="1.456 0.46 -3.265" rotation="-0 -90 0" nodeId="55">
+            <TransformGroup name="beltEnd5" translation="3.49283e-05 0 2.769" nodeId="56"/>
+          </TransformGroup>
+          <TransformGroup name="beltStart6" translation="1.456 0.46 -3.93591" rotation="-0 -90 0" nodeId="57">
+            <TransformGroup name="beltEnd6" translation="3.49283e-05 2.89083e-05 2.769" nodeId="58"/>
+          </TransformGroup>
+          <TransformGroup name="beltStart7" translation="1.456 0.46 -4.61608" rotation="-0 -90 0" nodeId="59">
+            <TransformGroup name="beltEnd7" translation="3.49283e-05 2.89083e-05 2.769" nodeId="60"/>
+          </TransformGroup>
+          <TransformGroup name="beltStart8" translation="1.456 0.46 -5.29554" rotation="-0 -90 0" nodeId="61">
+            <TransformGroup name="beltEnd8" translation="3.48091e-05 2.89083e-05 2.769" nodeId="62"/>
+          </TransformGroup>
+          <TransformGroup name="beltStart9" translation="1.456 0.459 -5.97476" rotation="-0 -90 0" nodeId="63">
+            <TransformGroup name="beltEnd9" translation="3.48091e-05 2.89083e-05 2.769" nodeId="64"/>
+          </TransformGroup>
+          <TransformGroup name="beltStart10" translation="1.456 0.457 -6.64259" rotation="-0 -90 0" nodeId="65">
+            <TransformGroup name="beltEnd10" translation="3.48091e-05 2.89083e-05 2.769" nodeId="66"/>
+          </TransformGroup>
+          <TransformGroup name="beltJointNode" translation="0 0.405 2.15847" nodeId="67"/>
+          <TransformGroup name="beltStart11" translation="1.456 0.447 -7.307" rotation="-0 -90 0" nodeId="68">
+            <TransformGroup name="beltEnd11" translation="0 2.89083e-05 2.769" nodeId="69"/>
+          </TransformGroup>
+          <TransformGroup name="beltStart12" translation="1.456 0.445 -7.99877" rotation="-0 -90 0" nodeId="70">
+            <TransformGroup name="beltEnd12" translation="3.48091e-05 2.89083e-05 2.769" nodeId="71"/>
+          </TransformGroup>
+          <TransformGroup name="beltStart13" translation="1.456 0.44 -8.67093" rotation="-0 -90 0" nodeId="72">
+            <TransformGroup name="beltEnd13" translation="3.48091e-05 2.89083e-05 2.769" nodeId="73"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="trailerGrp" translation="6.89612e-08 0.9639 -5.33322e-05" scale="1.05 1.05 1.05" nodeId="74">
+          <Shape shapeId="3" name="DpTrailer" translation="0.221076 0.0755065 -2.695" nodeId="75" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="4" name="doveTailFrame" translation="-0.00757922 -0.0268689 -4.574" nodeId="76" materialIds="9" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="5" name="doveTrackGrip" translation="-0.00277518 0.0338358 -1.17326" nodeId="77" materialIds="9" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="6" name="doveDp" translation="1.69966e-07 0.023993 -2.77931" nodeId="78" materialIds="6" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="7" name="doveWood" translation="0.00052115 0.0153489 -1.29397" nodeId="79" materialIds="10" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="8" name="lightBar" translation="0.00082416 -0.0833421 -1.66918" nodeId="80" materialIds="9" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="lightBar.001" translation="0.00758468 -0.371478 -0.89532" nodeId="81" materialIds="9" castsShadows="true" receiveShadows="true"/>
+              <TransformGroup name="rearLightOvalLEDRed_01" translation="1.1058 -0.375207 -0.887189" rotation="-90 -0 0" scale="1.07925 1 1" nodeId="82"/>
+              <TransformGroup name="rearLightOvalLEDRed_02" translation="-1.106 -0.375207 -0.887189" rotation="-90 -0 0" scale="1.07925 1 1" nodeId="83"/>
+              <TransformGroup name="rearLightOvalLEDRed_03" translation="-0.862706 -0.375207 -0.887189" rotation="-90 -0 0" scale="1.07925 1 1" nodeId="84"/>
+              <TransformGroup name="rearLightOvalLEDRed_04" translation="0.863 -0.375207 -0.887189" rotation="-90 -0 0" scale="1.07925 1 1" nodeId="85"/>
+              <TransformGroup name="rearLightCircleRed1" translation="0.169209 -0.376166 -0.893" rotation="-90 -0 0" scale="0.3 0.3 0.3" nodeId="86"/>
+              <TransformGroup name="rearLightCircleRed2" translation="-0.156228 -0.376166 -0.893" rotation="-90 -0 0" scale="0.3 0.3 0.3" nodeId="87"/>
+              <TransformGroup name="rearLightCircleRed3" translation="0.0120469 -0.376166 -0.893" rotation="-90 -0 0" scale="0.3 0.3 0.3" nodeId="88"/>
+              <TransformGroup name="rearLightCircleRed4" translation="1.291 -0.372268 -0.828388" rotation="-90 -90 0" scale="0.4 0.4 0.4" nodeId="89"/>
+              <TransformGroup name="rearLightCircleRed5" translation="-1.291 -0.372268 -0.828388" rotation="-90 90 0" scale="0.4 0.4 0.4" nodeId="90"/>
+            </Shape>
+            <Shape shapeId="10" name="doveTailFrame.001" translation="0.019587 -0.0345873 -1.2905" nodeId="91" materialIds="9" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="11" name="Cube.006" translation="0.00348214 -0.0893071 -1.4622" scale="0.952381 0.952381 0.952381" compoundChild="true" collisionMask="8194" clipDistance="300" nodeId="92" materialIds="4" nonRenderable="true"/>
+            <TransformGroup name="beltStart14" translation="1.31125 0.0169165 -0.22635" rotation="-0 -90 0" scale="0.952381 0.952381 0.952381" nodeId="93">
+              <TransformGroup name="beltEnd14" translation="3.48091e-05 2.89083e-05 2.769" nodeId="94"/>
+            </TransformGroup>
+            <TransformGroup name="beltStart15" translation="1.31125 0.0169165 -0.941645" rotation="-0 -90 0" scale="0.952381 0.952381 0.952381" nodeId="95">
+              <TransformGroup name="beltEnd15" translation="3.48091e-05 2.89083e-05 2.769" nodeId="96"/>
+            </TransformGroup>
+            <TransformGroup name="beltStart16" translation="1.31125 0.0169165 -1.65155" rotation="-0 -90 0" scale="0.952381 0.952381 0.952381" nodeId="97">
+              <TransformGroup name="beltEnd16" translation="3.48091e-05 2.89083e-05 2.769" nodeId="98"/>
+            </TransformGroup>
+          </Shape>
+          <Shape shapeId="12" name="frontToolBox" translation="0.449617 -0.354836 3.642" nodeId="99" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="13" name="leftMudFlap" translation="0.974879 -0.360035 -4.53228" nodeId="100" materialIds="9" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="14" name="lever" translation="1.30211 -0.253874 -0.375773" nodeId="101" materialIds="9" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="15" name="rearArm1" translation="0.0259143 -0.508401 -4.58239" rotation="-24.15 -0 0" nodeId="102" materialIds="9" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="16" name="rearArm2" translation="-0.0187149 0.136888 -0.68541" rotation="36.3 -0 0" nodeId="103" materialIds="9" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="17" name="rightMudFlap" translation="-0.902657 -0.360035 -4.53228" nodeId="104" materialIds="9" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="18" name="supports" translation="-0.008 -0.429 3.442" nodeId="105" materialIds="9" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="19" name="Cube" translation="-0.80114 -0.12132 0.00351071" compoundChild="true" collisionMask="8194" nodeId="106" materialIds="4" nonRenderable="true"/>
+            <Shape shapeId="19" name="Cube.001" translation="0.807716 -0.12132 0.00351071" compoundChild="true" collisionMask="8194" nodeId="107" materialIds="4" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="20" name="tongue" translation="-0.000372781 0.477634 6.04806" nodeId="108" materialIds="9" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="attacherJoint" translation="0 -0.140733 0" rotation="0 90 0" nodeId="109"/>
+          </Shape>
+          <Shape shapeId="21" name="toolBoxes" translation="1.25289 -0.428796 -0.223705" nodeId="110" materialIds="9" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="22" name="woodTrailer" nodeId="111" materialIds="10" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="23" name="trailer.001" translation="-0.00859335 0.883564 4.56998" scale="1.002 1 1" nodeId="112" materialIds="5" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="24" name="trailer.002" translation="-0.00383643 0.990355 4.54637" scale="1.002 1 1" nodeId="113" materialIds="9" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="25" name="trailer.003" translation="-0.0237203 -0.0535989 -0.632" scale="1.001 1 1" nodeId="114" materialIds="9" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="26" name="trailer" translation="-1.35102 -0.375497 3.358" nodeId="115" materialIds="9" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="27" name="Cube.002" translation="-0.00431156 0.85428 4.483" visibility="false" compoundChild="true" collisionMask="8194" nodeId="116" materialIds="4" nonRenderable="true"/>
+          <Shape shapeId="28" name="Cube.003" translation="-0.00757814 0.39087 3.68403" visibility="false" compoundChild="true" collisionMask="8194" nodeId="117" materialIds="4" nonRenderable="true"/>
+          <TransformGroup name="rearLightOvalOrange_01" translation="1.26379 -0.245953 -2.07863" rotation="-90 -90 0" scale="1.19048 1.19048 1.2381" nodeId="118"/>
+          <TransformGroup name="rearLightOvalOrange_02" translation="-1.27714 -0.241863 -2.07786" rotation="-90 90 0" scale="1.19048 1.19048 1.2381" nodeId="119"/>
+        </TransformGroup>
+        <Camera name="camera" translation="-0.458914 1.95701 5.86721" rotation="-4.12863 -25.5082 9.23813e-07" nodeId="120" fov="60" nearClip="0.1" farClip="10000" orthographicHeight="1"/>
+        <Shape shapeId="29" name="dynamicMountTrigger" translation="0 2.1042 -7.978" kinematic="true" compound="true" trigger="true" collisionMask="83894272" nodeId="121" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+      </Shape>
+  </Scene>
+
+</i3D>

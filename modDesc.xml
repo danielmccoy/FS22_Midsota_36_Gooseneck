@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="62">
+  <author>Lance</author>
+  <version>1.0.0.0</version>
+  <title>
+    <en>Midsota 36' Gooseneck Dovetail</en>
+  </title>
+
+  <description>
+    <en>
+      <![CDATA[Midsota 36' Gooseneck Dovetail]]>
+    </en>
+  </description>
+
+  <iconFilename>modIcon.dds</iconFilename>
+  <multiplayer supported="true" />
+
+  <storeItems>
+    <storeItem xmlFilename="Midsota.xml" />
+  </storeItems>
+
+  <brands>
+    <brand name="Midsota" title="Midsota MFG" image="brand.dds" />
+  </brands>
+
+</modDesc>

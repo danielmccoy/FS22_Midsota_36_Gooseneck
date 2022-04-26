@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<vehicle type="trailer">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+    <storeData>
+        <name>
+            <en>36' Gooseneck Dovetail</en>
+        </name>
+        <specs>
+            <combination>Truck</combination>
+        </specs>
+        <functions>
+            <function>$l10n_function_lowLoader</function>
+        </functions>
+        <image>modStore.dds</image>
+        <price>12000</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>Midsota</brand>
+        <category>lowloaders</category>
+        <shopTranslationOffset>0 0 0</shopTranslationOffset>
+        <shopRotationOffset>0 0 0</shopRotationOffset>
+    </storeData>
+
+    <base>
+        <typeDesc>Midsota 36' Gooseneck Dovetail</typeDesc>
+        <filename>diamondCBp.i3d</filename>
+        <size width="3.5" length="12" />
+        <components>
+            <component centerOfMass="0.00 0 1.13" solverIterationCount="30" mass="2000" />
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="DEFAULT_IMPLEMENT" />
+    </base>
+    <wheels>
+        <wheelConfigurations>
+            <wheelConfiguration name="stock Dual" price="0">
+                <wheels autoRotateBackSpeed="2.2">
+                    <wheel filename="wheels/stock.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="0.9" repr="wheelFrontRight" forcePointRatio="0.3" initialCompression="60" suspTravel="0.15" spring="65" damper="42" />
+                    </wheel>
+                    <wheel filename="wheels/stock.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="0.9" repr="wheelFrontLeft" forcePointRatio="0.3" initialCompression="60" suspTravel="0.15" spring="65" damper="42" />
+                    </wheel>
+                    <wheel filename="wheels/stock.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="0.9" repr="wheelBackLeft" forcePointRatio="0.3" initialCompression="60" suspTravel="0.15" spring="65" damper="42" />
+                    </wheel>
+                    <wheel filename="wheels/stock.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="0.9" repr="wheelBackRight" forcePointRatio="0.3" initialCompression="60" suspTravel="0.15" spring="65" damper="42" />
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
+        </wheelConfigurations>
+    </wheels>
+
+    <dynamicMountAttacher triggerNode="dynamicMountTrigger" rootNode="0>" jointNode="0>" forceAcceleration="30" />
+
+    <tensionBelts>
+        <tensionBeltsConfigurations title="stock">
+            <tensionBeltsConfiguration name="Stock" price="0">
+                <tensionBelts linkNode="tensionBelts" jointNode="0>" width="0.075" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="-0.25" defaultOffsetSide="0.1" defaultHeight="2.75" interactionRadius="1.5" totalInteractionRadius="6.5" activationTrigger="beltActivationTrigger">
+                    <tensionBelt startNode="beltStart2" endNode="beltEnd2" />
+                    <tensionBelt startNode="beltStart3" endNode="beltEnd3" />
+                    <tensionBelt startNode="beltStart4" endNode="beltEnd4" />
+                    <tensionBelt startNode="beltStart5" endNode="beltEnd5" />
+                    <tensionBelt startNode="beltStart6" endNode="beltEnd6" />
+                    <tensionBelt startNode="beltStart7" endNode="beltEnd7" />
+                    <tensionBelt startNode="beltStart8" endNode="beltEnd8" />
+                    <tensionBelt startNode="beltStart9" endNode="beltEnd9" />
+                    <tensionBelt startNode="beltStart10" endNode="beltEnd10" />
+                    <tensionBelt startNode="beltStart11" endNode="beltEnd11" />
+                    <tensionBelt startNode="beltStart12" endNode="beltEnd12" />
+                    <tensionBelt startNode="beltStart13" endNode="beltEnd13" />
+                    <tensionBelt startNode="beltStart14" endNode="beltEnd14" />
+                    <tensionBelt startNode="beltStart15" endNode="beltEnd15" />
+                    <tensionBelt startNode="beltStart16" endNode="beltEnd16" />
+                </tensionBelts>
+            </tensionBeltsConfiguration>
+        </tensionBeltsConfigurations>
+    </tensionBelts>
+
+    <attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="attacherJoint" jointType="semitrailer" />
+        </inputAttacherJoints>
+        <support animationName="moveSupport" />
+        <brakeForce force="0.5" />
+    </attachable>
+
+    <ai>
+        <agentAttachment jointNode="attacherJoint" rotCenterWheelIndices="1 2 3 4" width="2.6" height="4" length="16.2" lengthOffset="3.4"/>
+    </ai>
+
+    <lights>
+        <sharedLight linkNode="rearLightOvalLEDRed_04" filename="sharedParts/rearLightOvalLEDRed_03_left.xml" />
+        <sharedLight linkNode="rearLightOvalLEDRed_03" filename="sharedParts/rearLightOvalLEDRed_03_right.xml" />
+        <sharedLight linkNode="rearLightOvalLEDRed_02" filename="sharedParts/rearLightOvalLEDRed_03_right.xml" />
+        <sharedLight linkNode="rearLightOvalLEDRed_01" filename="sharedParts/rearLightOvalLEDRed_03_left.xml" />
+        <states>
+            <state lightTypes="0" />
+        </states>
+    </lights>
+
+    <animations>
+        <animation name="moveSupport">
+            <part node="supports" startTime="0" endTime="1" startTrans="-0.008 -0.429 3.442" endTrans="0.002 -0.648 3.442" />
+        </animation>
+        <animation name="doveTail">
+            <!-- <part node="supports" startTime="0" endTime="1" startTrans="-0.008 -0.429 3.442" endTrans="0.002 -0.648 3.442" /> -->
+            <part node="doveTailFrame" startTime="0.1" endTime="1" startRot="0 0 0" endRot="-15 0 0" />
+            <part node="lever" startTime="0" endTime=".1" startRot="0 0 0" endRot="90 0 0" />
+            <part node="rearArm1" startTime="0.1" endTime="1" startRot="0 0 0" endRot="-24.15 0 0" />
+            <part node="rearArm2" startTime="0.1" endTime="1" startRot="0 0 0" endRot="31.3 0 0" />
+            <part node="lightBar" startTime="0.1" endTime=".95" startRot="0 0 0" endRot="18 0 0" />
+        </animation>
+    </animations>
+
+    <cylindered>
+        <movingTools>
+            <movingTool node="doveTailFrame">
+                <controls axis="AXIS_FRONTLOADER_TOOL" invertAxis="true" invertMouseAxis="true" speedFactor="0.8" iconName="FRONTLOADER_ARM_ROTATE_TOOL" />
+                <animation animSpeed="10" animAcceleration="1" animName="doveTail" animStartTime="0" />
+            </movingTool>
+            <movingTool node="tongue">
+                <controls axis="AXIS_FRONTLOADER_TOOL2" invertAxis="true" invertMouseAxis="true" speedFactor="0.03" iconName="FRONTLOADER_ARM_ROTATE_TOOL" />
+                <translation transSpeed=".2" transAcceleration="200" transMax="0.492" transMin="0.164" translationAxis="2" startTrans="0.35" />
+                <inputAttacherJoint value="true" />
+            </movingTool>
+        </movingTools>
+
+        <sounds>
+            <hydraulic template="defaultHydraulicSound" />
+        </sounds>
+    </cylindered>
+
+    <baseMaterial>
+        <material name="midsota_main_paint_" baseNode="trailer">
+            <shaderParameter name="colorMat0" value="SHARED_GREY2" />
+        </material>
+        <material name="diamondPlate" baseNode="DpTrailer">
+            <shaderParameter name="colorMat0" value="SHARED_GREY2" />
+        </material>
+    </baseMaterial>
+
+    <baseMaterialConfigurations price="1000" useDefaultColors="true" ColorIndex="1">
+        <baseMaterialConfiguration name="Stock" color="1 1 1" material="6" />
+        <baseMaterialConfiguration name="Stainless Steel" color="1 1 1" material="8" />
+        <baseMaterialConfiguration name="Dark Steel" color="0.35 0.35 0.40" material="8" />
+        <baseMaterialConfiguration name="Aluminum" color="0.65 0.65 0.75" material="8" />
+        <baseMaterialConfiguration name="Chrome" color="0.9 0.9 1" material="3" />
+        <baseMaterialConfiguration name="Polished" color="0.95 0.95 1" material="8" />
+        <baseMaterialConfiguration name="White" color="STOLL_WHITE2" material="0" />
+        <baseMaterialConfiguration name="Silver" color="SHARED_GREY2" material="0" />
+        <baseMaterialConfiguration name="Red" color="CASEIH_RED1" material="0" />
+        <baseMaterialConfiguration name="Grey" color="SHARED_GREY5" material="0" />
+        <baseMaterialConfiguration name="Orange" color="FLIEGL_ORANGE1" material="0" />
+        <baseMaterialConfiguration name="Blue" color="NEWHOLLAND_BLUE1" material="0" />
+        <baseMaterialConfiguration name="Dark Blue" color="HATZENBICHLER_DARKBLUE1" material="0" />
+        <baseMaterialConfiguration name="Deer Green" color="JOHNDEERE_GREEN1" material="0" />
+        <baseMaterialConfiguration name="Deer Yellow" color="JOHNDEERE_YELLOW1" material="0" />
+        <baseMaterialConfiguration name="New Silver" color="SHARED_GREY2" material="6" />
+        <baseMaterialConfiguration name="Scarlet Red" color="CASEIH_RED1" material="0" />
+        <baseMaterialConfiguration name="Pearl White" color="STOLL_WHITE2" material="0" />
+        <baseMaterialConfiguration name="Gun Metal" color="SHARED_GREY5" material="0" />
+        <baseMaterialConfiguration name="Dark Moon" color="0.02 0.02 0.02" material="0" />
+        <baseMaterialConfiguration name="Blaze Orange" color="FLIEGL_ORANGE1" material="0" />
+        <baseMaterialConfiguration name="Nitro Blue" color="NEWHOLLAND_BLUE1" material="0" />
+        <baseMaterialConfiguration name="Deep Blue" color="HATZENBICHLER_DARKBLUE1" material="0" />
+        <baseMaterialConfiguration name="Deer Green" color="JOHNDEERE_GREEN1" material="0" />
+        <baseMaterialConfiguration name="Deer Yellow" color="JOHNDEERE_YELLOW1" material="0" />
+        <material name="midsota_main_paint_" shaderParameter="colorMat0" />
+        <material name="diamondPlate" shaderParameter="colorMat0" />
+    </baseMaterialConfigurations>
+
+    <rimColorConfigurations useDefaultColors="true" price="300">
+        <rimColorConfiguration name="Stainless Steel" color="1 1 1" material="8" />
+        <rimColorConfiguration name="Dark Steel" color="0.35 0.35 0.40" material="8" />
+        <rimColorConfiguration name="Aluminum" color="0.65 0.65 0.75" material="3" />
+        <rimColorConfiguration name="Chrome" color="0.9 0.9 1" material="2" />
+        <rimColorConfiguration name="Polished" color="0.95 0.95 1" material="3" />
+        <rimColorConfiguration name="New Silver" color="SHARED_GREY2" material="27" />
+        <rimColorConfiguration name="Scarlet Red" color="CASEIH_RED1" material="27" />
+        <rimColorConfiguration name="Pearl White" color="STOLL_WHITE2" material="27" />
+        <rimColorConfiguration name="Gun Metal" color="SHARED_GREY5" material="27" />
+        <rimColorConfiguration name="Blaze Orange" color="FLIEGL_ORANGE1" material="27" />
+        <rimColorConfiguration name="Nitro Blue" color="NEWHOLLAND_BLUE1" material="27" />
+        <rimColorConfiguration name="Deep Blue" color="HATZENBICHLER_DARKBLUE1" material="27" />
+        <rimColorConfiguration name="Deer Green" color="JOHNDEERE_GREEN1" material="27" />
+        <rimColorConfiguration name="Deer Yellow" color="JOHNDEERE_YELLOW1" material="27" />
+        <rimColorConfiguration name="Metallic Manitou" color="MANITOU_RED" material="27" />
+    </rimColorConfigurations>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2" />
+    <washable dirtDuration="90" washDuration="1" workMultiplier="3" fieldMultiplier="2" />
+
+    <foliageBending>
+        <bendingNode minX="-1.35" maxX="1.35" minZ="-6.125" maxZ="5" yOffset="0.2" />
+    </foliageBending>
+
+    <i3dMappings>
+        <i3dMapping id="trailerMainComp" node="0>" />
+        <i3dMapping id="wheels" node="0>0" />
+        <i3dMapping id="wheelBackLeft" node="0>0|0" />
+        <i3dMapping id="wheelFrontLeft" node="0>0|1" />
+        <i3dMapping id="wheelFrontRight" node="0>0|2" />
+        <i3dMapping id="wheelBackRight" node="0>0|3" />
+        <i3dMapping id="tensionBelts" node="0>1" />
+        <i3dMapping id="beltActivationTrigger" node="0>1|0" />
+        <i3dMapping id="beltStart2" node="0>1|1" />
+        <i3dMapping id="beltEnd2" node="0>1|1|0" />
+        <i3dMapping id="beltStart3" node="0>1|2" />
+        <i3dMapping id="beltEnd3" node="0>1|2|0" />
+        <i3dMapping id="beltStart4" node="0>1|3" />
+        <i3dMapping id="beltEnd4" node="0>1|3|0" />
+        <i3dMapping id="beltStart5" node="0>1|4" />
+        <i3dMapping id="beltEnd5" node="0>1|4|0" />
+        <i3dMapping id="beltStart6" node="0>1|5" />
+        <i3dMapping id="beltEnd6" node="0>1|5|0" />
+        <i3dMapping id="beltStart7" node="0>1|6" />
+        <i3dMapping id="beltEnd7" node="0>1|6|0" />
+        <i3dMapping id="beltStart8" node="0>1|7" />
+        <i3dMapping id="beltEnd8" node="0>1|7|0" />
+        <i3dMapping id="beltStart9" node="0>1|8" />
+        <i3dMapping id="beltEnd9" node="0>1|8|0" />
+        <i3dMapping id="beltStart10" node="0>1|9" />
+        <i3dMapping id="beltEnd10" node="0>1|9|0" />
+        <i3dMapping id="beltJointNode" node="0>1|10" />
+        <i3dMapping id="beltStart11" node="0>1|11" />
+        <i3dMapping id="beltEnd11" node="0>1|11|0" />
+        <i3dMapping id="beltStart12" node="0>1|12" />
+        <i3dMapping id="beltEnd12" node="0>1|12|0" />
+        <i3dMapping id="beltStart13" node="0>1|13" />
+        <i3dMapping id="beltEnd13" node="0>1|13|0" />
+        <i3dMapping id="trailerGrp" node="0>2" />
+        <i3dMapping id="DpTrailer" node="0>2|0" />
+        <i3dMapping id="doveTailFrame" node="0>2|1" />
+        <i3dMapping id="doveTrackGrip" node="0>2|1|0" />
+        <i3dMapping id="doveDp" node="0>2|1|1" />
+        <i3dMapping id="doveWood" node="0>2|1|2" />
+        <i3dMapping id="lightBar" node="0>2|1|3" />
+        <i3dMapping id="lightBar.001" node="0>2|1|3|0" />
+        <i3dMapping id="rearLightOvalLEDRed_01" node="0>2|1|3|1" />
+        <i3dMapping id="rearLightOvalLEDRed_02" node="0>2|1|3|2" />
+        <i3dMapping id="rearLightOvalLEDRed_03" node="0>2|1|3|3" />
+        <i3dMapping id="rearLightOvalLEDRed_04" node="0>2|1|3|4" />
+        <i3dMapping id="rearLightCircleRed1" node="0>2|1|3|5" />
+        <i3dMapping id="rearLightCircleRed2" node="0>2|1|3|6" />
+        <i3dMapping id="rearLightCircleRed3" node="0>2|1|3|7" />
+        <i3dMapping id="rearLightCircleRed4" node="0>2|1|3|8" />
+        <i3dMapping id="rearLightCircleRed5" node="0>2|1|3|9" />
+        <i3dMapping id="doveTailFrame.001" node="0>2|1|4" />
+        <i3dMapping id="Cube.006" node="0>2|1|5" />
+        <i3dMapping id="beltStart14" node="0>2|1|6" />
+        <i3dMapping id="beltEnd14" node="0>2|1|6|0" />
+        <i3dMapping id="beltStart15" node="0>2|1|7" />
+        <i3dMapping id="beltEnd15" node="0>2|1|7|0" />
+        <i3dMapping id="beltStart16" node="0>2|1|8" />
+        <i3dMapping id="beltEnd16" node="0>2|1|8|0" />
+        <i3dMapping id="frontToolBox" node="0>2|2" />
+        <i3dMapping id="leftMudFlap" node="0>2|3" />
+        <i3dMapping id="lever" node="0>2|4" />
+        <i3dMapping id="rearArm1" node="0>2|5" />
+        <i3dMapping id="rearArm2" node="0>2|5|0" />
+        <i3dMapping id="rightMudFlap" node="0>2|6" />
+        <i3dMapping id="supports" node="0>2|7" />
+        <i3dMapping id="Cube" node="0>2|7|0" />
+        <i3dMapping id="Cube.001" node="0>2|7|1" />
+        <i3dMapping id="tongue" node="0>2|8" />
+        <i3dMapping id="attacherJoint" node="0>2|8|0" />
+        <i3dMapping id="toolBoxes" node="0>2|9" />
+        <i3dMapping id="woodTrailer" node="0>2|10" />
+        <i3dMapping id="trailer.001" node="0>2|11" />
+        <i3dMapping id="trailer.002" node="0>2|12" />
+        <i3dMapping id="trailer.003" node="0>2|13" />
+        <i3dMapping id="trailer" node="0>2|14" />
+        <i3dMapping id="Cube.002" node="0>2|15" />
+        <i3dMapping id="Cube.003" node="0>2|16" />
+        <i3dMapping id="rearLightOvalOrange_01" node="0>2|17" />
+        <i3dMapping id="rearLightOvalOrange_02" node="0>2|18" />
+        <i3dMapping id="camera" node="0>3" />
+        <i3dMapping id="dynamicMountTrigger" node="0>4" />
+        <!--<i3dMapping id="transform" node="1>" />-->
+    </i3dMappings>
+</vehicle>
